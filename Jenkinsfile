@@ -12,13 +12,13 @@ pipeline {
       stage('Code Checkout') {
          steps {
             // Get some code from a GitHub repository
-            git 'https://github.com/sidvijay18/tomcat_pipeline.git'   
+            git 'https://github.com/Piyushwa/tomcat_pipeline.git'   
          }
 
       }
-     
       
-      stage(' Code Build') {
+      
+      stage('Code Build') {
          steps {
            
             // To run Maven on a Windows agent, use
@@ -31,7 +31,7 @@ pipeline {
          steps {
         
             // To run Maven on a Windows agent, use
-           bat label: '', script: 'copy /Y target\\tomcat-1.0.war E:\\apache-tomcat-9.0.16-windows-x64\\apache-tomcat-9.0.16\\webapps'
+           bat label: '', script: 'copy /Y target\\tomcat-1.0.war D:\\apache-tomcat-9.0.37\\webapps'
          }
 
       }
